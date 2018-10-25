@@ -25,7 +25,7 @@ SECRET_KEY = '_a&ibk5!r^7lovt5#=yp81r6^d*scm$by^+e$ebm7%=217funl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gpfood.herokuapp.com']
 
 
 # Application definition
