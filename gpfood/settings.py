@@ -131,4 +131,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'recipe', 'static', 'recipe')
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'gpfood', 'recipe', 'static')
