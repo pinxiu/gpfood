@@ -16,8 +16,8 @@ setup(
     description='A simple Django app to conduct Web-based polls.',
     long_description=README,
     url='https://www.example.com/',
-    author='Your Name',
-    author_email='yourname@example.com',
+    author='Pinxiu Gong',
+    author_email='pinxiu.gong@gmail.com',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
@@ -28,6 +28,7 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Internet :: WWW/HTTP',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
     ],
