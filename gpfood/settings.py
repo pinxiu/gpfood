@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
 LOCAL_APPS = [
     'recipe.apps.RecipeConfig',
-    'user.apps.UserConfig',
+    'customer.apps.CustomerConfig',
     'grocery.apps.GroceryConfig',
 ]
 

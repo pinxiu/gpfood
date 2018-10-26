@@ -1,4 +1,4 @@
+whitenoise
 django
 gunicorn
 django-heroku
-whitenoise
