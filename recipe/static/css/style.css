@@ -1,0 +1,54 @@
+/*=== MEDIA QUERY ===*/
+@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900");
+
+/* Required height of parents of the Half Page Carousel for proper displaying carousel itself */
+html,
+body,
+.view {
+  height: 100%; 
+  font-family: "Muli", sans-serif;}
+
+/* Half Page Carousel itself*/
+.carousel {
+  height: 50%; }
+  .carousel .carousel-inner {
+    height: 100%; }
+    .carousel .carousel-inner .carousel-item,
+    .carousel .carousel-inner .active {
+      height: 100%; }
+
+/* Adjustment for mobile devices*/
+@media (max-width: 776px) {
+  .carousel {
+    height: 100%; } }
+
+/* Footer color for sake of consistency with Navbar */
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #363839;
+  padding: 25px 0;
+}
+
+@media (max-width: 480px) {
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+.footer-bottom .copyright p {
+  color: #777;
+  font-family: "Muli", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 0;
+}
+.footer-bottom .copyright a {
+  color: #ccc;
+}
+.footer-bottom .copyright a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
