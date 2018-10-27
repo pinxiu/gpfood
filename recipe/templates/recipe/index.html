@@ -1,0 +1,11 @@
+{% load static %}
+
+{% if recipes %}
+    <ul>
+    {% for recipe in recipes %}
+        <li><a href="{% url 'recipe:detail' recipe.pk %}">{{ recipe }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No recipes are available.</p>
+{% endif %}

@@ -1,0 +1,9 @@
+<h1>{{ ingredient }}</h1>
+
+<ul>
+{% for history in ingredient.history_set.all %}
+    <li>{{ history.store }} -- {{ history.price_num }} {{ history.price_unit }} </li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'ingredient:index' %}">Home</a>

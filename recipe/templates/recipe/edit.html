@@ -1,0 +1,9 @@
+<h1>{{ recipe }}</h1>
+
+<ul>
+{% for ingredient in recipe.ingredients.all %}
+    <li>{{ ingredient }} -- {{ ingredient.quantity_num }} {{ ingredient.quantity_unit }} </li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'recipe:index' %}">Home</a>

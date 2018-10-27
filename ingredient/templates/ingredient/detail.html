@@ -1,0 +1,11 @@
+<h1>{{ ingredient }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'ingredient:edit' ingredient.pk %}" method="get">
+{% csrf_token %}
+{% for store in ingredient.history_set.all %}
+    {{ store }}
+{% endfor %}
+<input type="submit" value="View">
+</form>

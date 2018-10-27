@@ -1,17 +1,11 @@
 from django.contrib import admin
 
-from .models import Ingredient, Recipe
-
-from grocery.admin import HistoryInline
+from .models import Recipe
 
 
 class IngredientInline(admin.TabularInline):
     model = Recipe.ingredients.through
     extra = 3
-
-class IngredientAdmin(admin.ModelAdmin):
-    inlines = [HistoryInline]
-
 
 class RecipeAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -26,4 +20,3 @@ class RecipeAdmin(admin.ModelAdmin):
     search_fields = ['dish_name']
 
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(Ingredient, IngredientAdmin)

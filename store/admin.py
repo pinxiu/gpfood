@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import History, Store
+from .models import Store
+from price.models import History
 
 
 class HistoryInline(admin.TabularInline):
