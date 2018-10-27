@@ -1,5 +1,0 @@
-include LICENSE
-include README.rst
-recursive-include recipe/static *
-recursive-include recipe/templates *
-recursive-include docs *

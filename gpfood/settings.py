@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 
 LOCAL_APPS = [
     'recipe.apps.RecipeConfig',
-    'user.apps.UserConfig',
+    'customer.apps.CustomerConfig',
     'grocery.apps.GroceryConfig',
 ]
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'gpfood.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,21 +1,29 @@
 from django.contrib import admin
 
-from .models import Choice, Question
+from .models import Ingredient, Recipe
+
+from grocery.admin import HistoryInline
 
 
-class ChoiceInline(admin.TabularInline):
-    model = Choice
+class IngredientInline(admin.TabularInline):
+    model = Recipe.ingredients.through
     extra = 3
 
+class IngredientAdmin(admin.ModelAdmin):
+    inlines = [HistoryInline]
 
-class QuestionAdmin(admin.ModelAdmin):
+
+class RecipeAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,               {'fields': ['question_text']}),
+        (None,               {'fields': ['dish_name']}),
+        ('Author information', {'fields': ['author'], 'classes': ['collapse']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+        ('Instruction', {'fields': ['instruction'], 'classes': ['collapse']}),
     ]
-    inlines = [ChoiceInline]
-    list_display = ('question_text', 'pub_date', 'was_published_recently')
-    list_filter = ['pub_date']
-    search_fields = ['question_text']
+    inlines = [IngredientInline]
+    list_display = ('dish_name', 'author', 'pub_date', 'was_published_recently')
+    list_filter = ['author', 'pub_date']
+    search_fields = ['dish_name']
 
-admin.site.register(Question, QuestionAdmin)
+admin.site.register(Recipe, RecipeAdmin)
+admin.site.register(Ingredient, IngredientAdmin)
