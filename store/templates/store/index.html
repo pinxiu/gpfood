@@ -1,13 +1,13 @@
 {% extends 'base_index.html' %}
 
 {% block navbar %}
-<li class="nav-item active">
-<a class="nav-link waves-effect" href="{% url 'recipe:index' %}">Recipes
-  <span class="sr-only">(current)</span>
-</a>
-</li>
 <li class="nav-item">
-<a class="nav-link waves-effect" href="{% url 'store:index' %}">Stores</a>
+<a class="nav-link waves-effect" href="{% url 'recipe:index' %}">Recipes</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link waves-effect" href="{% url 'store:index' %}">Stores
+	<span class="sr-only">(current)</span>
+</a>
 </li>
 <li class="nav-item">
 <a class="nav-link waves-effect" href="{% url 'recipe:create' %}">Create New Recipe</a>
@@ -17,9 +17,9 @@
 </li>
 {% endblock navbar %}
 
-{% block recipe_content %}
+{% block store_content %}
 
-{% for recipe in recipes %}
+{% for store in stores %}
 
 <!--Grid column-->
 <div class="col-lg-3 col-md-6 mb-4">
@@ -28,30 +28,38 @@
 <div class="card">
 
   <!--Card image-->
-  <div class="view overlay">
-    <img src="{{ recipe.img }}" class="card-img-top" alt="">
-    <a href="{% url 'recipe:detail' recipe.pk %}">
-      <div class="mask rgba-white-slight"></div>
-    </a>
+  <div id="googleMap" class="view overlay">
   </div>
   <!--Card image-->
+
+  <script>
+	function myMap() {
+	var mapProp= {
+	    center:new google.maps.LatLng(51.508742,-0.120850),
+	    zoom:5,
+	};
+	var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+  </script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
 
   <!--Card content-->
   <div class="card-body text-center">
     <!--Category & Title-->
-    <a href="{% url 'recipe:detail' recipe.pk %}" class="grey-text">
-      <h5>{{ recipe.dish_type }}</h5>
+    <a href="" class="grey-text">
+      <h5>{{ store.location }}</h5>
     </a>
     <h5>
       <strong>
-        <a href="" class="dark-grey-text">{{ recipe.dish_name }}
+        <a href="" class="dark-grey-text">{{ store }}
           <span class="badge badge-pill danger-color">NEW</span>
         </a>
       </strong>
     </h5>
 
     <h4 class="font-weight-bold blue-text">
-      <strong>{{ recipe.time }}</strong>
+      <strong>{{ store.visit }}</strong>
     </h4>
 
   </div>
@@ -66,5 +74,5 @@
 
 {% endfor %}
 
-{% endblock recipe_content %}
+{% endblock store_content %}
 
