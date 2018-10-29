@@ -6,6 +6,8 @@ from django.shortcuts import get_object_or_404, render
 
 # from .models import Choice, Question
 
+def index(request):
+	return render(request, 'recipe/base_recipes.html')
 
 # class IndexView(generic.ListView):
 #     template_name = 'recipe/index.html'
