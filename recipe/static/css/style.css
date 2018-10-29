@@ -55,3 +55,34 @@ body,
   color: #fff;
   text-decoration: underline;
 }
+
+.bg-1 {
+  background: url("../img/header/dish1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-2 {
+  background: url("../img/header/dish2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bg-3 {
+  background: url("../img/header/dish3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-item span {
+  color: red;
+}
+
+.header-block {
+  padding: 0 50px;
+}
+
+.header-title {
+  margin-top: 2rem !important;
+  margin-bottom: 1.5rem !important;
+}

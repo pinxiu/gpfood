@@ -5,12 +5,10 @@ from django.views import generic
 
 from .models import Recipe
 
-def index(request):
-	return render(request, 'recipe/base_recipes.html')
-
 class IndexView(generic.ListView):
     template_name = 'recipe/index.html'
     context_object_name = 'recipes'
+    paginate_by = 8
 
     def get_queryset(self):
 	    """
@@ -19,7 +17,7 @@ class IndexView(generic.ListView):
 	    """
 	    return Recipe.objects.filter(
 	        pub_date__lte=timezone.now()
-	    ).order_by('-pub_date')[:5]
+	    ).order_by('-pub_date')
 
 
 class DetailView(generic.DetailView):
