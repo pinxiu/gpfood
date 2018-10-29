@@ -22,10 +22,15 @@ body,
   .carousel {
     height: 100%; } }
 
+.carousel-inner .carousel-item >img{
+  min-height : 1000px;
+  max-height : 3000px;
+  width : 100%;
+}
+
 /* Footer color for sake of consistency with Navbar */
 .footer-bottom {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
   background: #363839;
   padding: 25px 0;
@@ -38,11 +43,9 @@ body,
 }
 
 .footer-bottom .copyright p {
+  text-align: center;
   color: #777;
   font-family: "Muli", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  display: block;
   margin-bottom: 0;
 }
 .footer-bottom .copyright a {

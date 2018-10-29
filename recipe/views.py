@@ -5,6 +5,8 @@ from django.views import generic
 
 from .models import Recipe
 
+def index(request):
+	return render(request, 'recipe/base_recipes.html')
 
 class IndexView(generic.ListView):
     template_name = 'recipe/index.html'
