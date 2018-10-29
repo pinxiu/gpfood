@@ -21,4 +21,5 @@ admin.site.site_header = 'Gracepoint Food Admin Dashboard'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('recipe/', include('recipe.urls')),
+    path('ingredient/', include('ingredient.urls')),
 ]

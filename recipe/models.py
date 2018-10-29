@@ -4,14 +4,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
-
-class Ingredient(models.Model):
-    ingredient_name = models.CharField(max_length=200)
-    quantity_num = models.IntegerField()
-    quantity_unit = models.CharField(max_length=200)
-
-    def __str__(self):
-        return self.ingredient_name
+from ingredient.models import Ingredient
 
 
 class Recipe(models.Model):
@@ -20,6 +13,9 @@ class Recipe(models.Model):
     pub_date = models.DateTimeField('date published')
     instruction = models.CharField(max_length=200)
     ingredients = models.ManyToManyField(Ingredient)
+    img = 'https://lh3.googleusercontent.com/proxy/wore-t-h5VEQ0DOxy3yvWO2p7fDAO0NO5BhiBh1Wrg7z-dzZ0iFHwpfBXhv3-4WNtXYOtWCEp7z-chHyfCo0fX7JJ-R65nPg_DbvhLTvMiP8fSEuiPDkelJa92fF__2KEOu_uCXKlE6gvZeUsPOGWFHA6zVoBcTrrShqxCsbtlVRLcOyJF5Ewe_VMwkIxeNzLXwDhFIP=w1152'
+    dish_type = 'Main Dish'
+    time = '10 min'
 
     def __str__(self):
         return self.dish_name
